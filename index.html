@@ -1,0 +1,97 @@
+<!-- John Latouf
+	 CSCI 4166
+	 Final Project -->
+<!DOCTYPE html>
+
+<head>
+
+<script src="js/d3.js"></script>
+<!-- <script src= "http://d3js.org/topojson.v1.min.js"></script> -->
+<script src= "js/topojson.v1.min.js"></script>
+<script src= "js/noUiSlider.11.0.3/nouislider.min.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="js/noUiSlider.11.0.3/nouislider.min.css">
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+</head>
+<body>
+<div id="loader"></div>
+<div id="loader2"></div>
+<div id="loader3"></div>
+<div id="wrapper">
+	<div id="zoom_back" onClick="zoomBack();" class="btn_ui btn_zoom_back">zoom back</div>
+	<div id="year_display" class="year_display">2017</div>
+
+	<div class="detail_wrapper"></div>
+		<div id="category_legend">
+			<div id="toggle_legend_holder" class="btn_ui">Legend</div>
+			<a href="#" onClick="recolorPoints('species')" class="cat_legend_link legend_links selected_link">Species</a>
+			<a href="#" onClick="recolorPoints('genus')" class="cat_legend_link legend_links">genus</a>
+			<a href="#" onClick="recolorPoints('family')" class="cat_legend_link legend_links">family</a>
+			
+			<div id="legend_holder" class="legend_back_style"> 
+				<div id="legend_holder_world">
+				</div>
+			</div>
+		</div>
+	<div id="climate_holder">
+		<div id="toggle_climate_legend" class="btn_ui" class="legend_links_c">Climate</div>
+		<a href="#" onClick="recolorMap('Tm')" class="legend_links_c">Mean Temp</a>
+		<a href="#" onClick="recolorMap('Tx')" class="legend_links_c selected_link">Max Temp</a>
+		<a href="#" onClick="recolorMap('Tn')"  class="legend_links_c">Min Temp</a>
+		<a href="#" onClick="recolorMap('P')" class="legend_links_c">Prec</a>
+		<a href="#" onClick="recolorMap('S')" class="legend_links_c">Snow</a>
+	
+		<div id="climate_display" class="legend_back_style"> </div>
+	
+	
+	</div>
+
+	<div id="year_prev" onClick="yearChange('prev')" class="btn_ui btn_year btn_year_prev">2016</div>
+	<div id="year_next" onClick="yearChange('next')" class="btn_ui btn_year btn_year_next">2018</div>
+	<div id="map_holder"></div>
+	<div id="slider-pips"></div>
+
+	
+	<div id="line_charts">
+	<div id="line_legend_holder"> </div>
+		<div id="toggle_line_legend" class="btn_ui">Legend</div>
+		<div class="line_legend_label">
+			<a href="#" onClick="build_lines_data(binned_line_data, 'total');" class="legend_links line_legend_links selected_link" id="line_legend_total">Total</a>
+			<a href="#" onClick="build_lines_data(binned_line_data, 'species')" class="legend_links line_legend_links">Species</a>
+			<a href="#" onClick="build_lines_data(binned_line_data, 'genus')" class="legend_links line_legend_links">genus</a>
+			<a href="#" onClick="build_lines_data(binned_line_data, 'family')" class="legend_links line_legend_links">family</a>
+		</div>
+		<h4>Data Collection Over Project Timeline</h4>
+		<div id="line_legend" class="legend_back_style">
+			<br /><br />
+		</div>
+	
+		<svg id="lines_data" width="100%" height="100%"></svg>
+		<svg id="lines_Tm" width="100%" height="100%"></svg>
+		<svg id="lines_Tx" width="100%" height="100%"></svg>
+		<svg id="lines_Tn" width="100%" height="100%"></svg>
+		<svg id="lines_P" width="100%" height="100%"></svg>
+		<svg id="lines_S" width="100%" height="100%"></svg>
+	</div>
+	
+	<div id="pie_chart">
+	
+	</div>
+	<div id="pie_legend">
+	</div>
+</div>
+<!-- These are the project scripts -->
+<script src= "js/proj/ajax_req.js"></script>
+<script src= "js/proj/charts.js"></script>
+<script src= "js/proj/legends.js"></script>
+<script src= "js/proj/piechart.js"></script>
+
+
+
+
+
+</body>
+</html>
