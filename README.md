@@ -21,16 +21,13 @@ Numpy (http://www.numpy.org/)
 
 It looks best in Chrome, tested in Firefox and Safari as well
 
-Note: If you have installed Pandas through Anaconda your paths might be weird. In this 
-case, you may need to change "python" in the three PHP files below to 
-"/anaconda/bin/python" or the Windows equivalent
-
 -----------------------------------------------------------------------------------------
 
 Usage Instructions:
 
 - Extract files to a folder accessible from your localhost
-- Open the index.html page
+- Extract the data/butterflies_total.csv.zip file (this file is 349MB)
+- With server running, open the index.html page
 
 -----------------------------------------------------------------------------------------
 
